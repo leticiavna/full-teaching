@@ -1,48 +1,53 @@
 package com.fullteaching.backend.coursedetails;
 
+import com.fullteaching.backend.course.Course;
+import com.fullteaching.backend.filegroup.FileGroup;
+import com.fullteaching.backend.forum.Forum;
+import com.fullteaching.backend.user.User;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Testa Getters e Setters pois não há outros métodos nessa classe
 class CourseDetailsTest {
+    private User teacher = new User("teacher1@gmail.com", "pass", "TEACHER", "", "TEACHER");
+    private Course course = new Course("QUALIDADE E TESTE", "", teacher);
+    private CourseDetails details = new CourseDetails();
 
     @Test
     void getId() {
+        details.setId(1);
+        assertEquals(1, details.getId());
     }
 
-    @Test
-    void setId() {
-    }
 
     @Test
     void getInfo() {
-    }
-
-    @Test
-    void setInfo() {
+        details.setInfo("Curso da Uff em 2020");
+        assertEquals("Curso da Uff em 2020", details.getInfo());
     }
 
     @Test
     void getForum() {
-    }
-
-    @Test
-    void setForum() {
+        Forum forum = new Forum();
+        details.setForum(forum);
+        assertEquals(forum, details.getForum());
     }
 
     @Test
     void getFiles() {
-    }
-
-    @Test
-    void setFiles() {
+        List<FileGroup> files = new ArrayList<FileGroup>();
+        details.setFiles(files);
+        assertEquals(files, details.getFiles());
     }
 
     @Test
     void getCourse() {
+        details.setCourse(course);
+        assertEquals(course, details.getCourse());
     }
 
-    @Test
-    void setCourse() {
-    }
 }
