@@ -1,0 +1,442 @@
+{
+	"id": "1924ed3d-b2a7-4876-8ae9-f8d946f8fc30",
+	"name": "FullTeaching",
+	"timestamp": "2020-08-29T19:30:30.170Z",
+	"collection_id": "cbc002ea-682d-47e6-bcca-5bb98bde2b79",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 27,
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "2e07d386-a13e-476c-8603-e9424ba02ff2",
+			"name": "Get Course",
+			"url": "http://localhost:5000/api-courses/course/5",
+			"time": 500,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": false
+			},
+			"testPassFailCounts": {
+				"Status Code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				500
+			],
+			"allTests": [
+				{
+					"Status Code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": false
+				}
+			]
+		},
+		{
+			"id": "2314a949-3528-43e8-9f5d-92588a730110",
+			"name": "Get User Courses",
+			"url": "http://localhost:5000/api-courses/user/1",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Status code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "12226a5d-eb28-4f4e-8f0f-11f148b3736e",
+			"name": "New Course",
+			"url": "http://localhost:5000/api-courses/new",
+			"time": 183,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status Code is 201 - Created": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 201 - Created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183
+			],
+			"allTests": [
+				{
+					"Status Code is 201 - Created": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "7b396c11-b99c-4ff8-bb4d-9988c0a509b1",
+			"name": "Edit Course",
+			"url": "http://localhost:5000/api-courses/edit",
+			"time": 201,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status Code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "6ea24a5c-9401-4393-bcf3-7f30475e333d",
+			"name": "Add Attenders",
+			"url": "http://localhost:5000/api-courses/edit/add-attenders/course/81",
+			"time": 349,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				349
+			],
+			"allTests": [
+				{
+					"Status Code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "582fe634-6a52-4dc5-b6ff-dcca3c3a9d24",
+			"name": "Delete Attenders",
+			"url": "http://localhost:5000/api-courses/edit/delete-attenders",
+			"time": 234,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status Code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "0ea9ff74-7654-4066-9e43-63808f84c144",
+			"name": "Delete Course",
+			"url": "http://localhost:5000/api-courses/delete/81",
+			"time": 571,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 200 - OK": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": false
+			},
+			"testPassFailCounts": {
+				"Status Code is 200 - OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				571
+			],
+			"allTests": [
+				{
+					"Status Code is 200 - OK": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": false
+				}
+			]
+		},
+		{
+			"id": "0f90f134-283c-4d25-a511-1ed9fb8d0e66",
+			"name": "Change Password",
+			"url": "http://localhost:5000/api-users/changePassword",
+			"time": 470,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status Code is 201 - Created": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 201 - Created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				470
+			],
+			"allTests": [
+				{
+					"Status Code is 201 - Created": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "04fa7500-cb61-4cde-a67a-9f73bec10b1d",
+			"name": "Create User",
+			"url": "http://localhost:5000/api-users/new",
+			"time": 357,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status Code is 201 - Created": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 201 - Created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				357
+			],
+			"allTests": [
+				{
+					"Status Code is 201 - Created": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		},
+		{
+			"id": "0505f8c8-45fd-4a60-86f3-8e78afcc3a65",
+			"name": "Create Already Created User",
+			"url": "http://localhost:5000/api-users/new",
+			"time": 25,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status Code is 409 - Conflict": true,
+				"Returns a JSON": true,
+				"Response time is Below 500ms": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 409 - Conflict": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Returns a JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is Below 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				25
+			],
+			"allTests": [
+				{
+					"Status Code is 409 - Conflict": true,
+					"Returns a JSON": true,
+					"Response time is Below 500ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3013,
+	"collection": {
+		"requests": [
+			{
+				"id": "2e07d386-a13e-476c-8603-e9424ba02ff2",
+				"method": "GET"
+			},
+			{
+				"id": "2314a949-3528-43e8-9f5d-92588a730110",
+				"method": "GET"
+			},
+			{
+				"id": "12226a5d-eb28-4f4e-8f0f-11f148b3736e",
+				"method": "POST"
+			},
+			{
+				"id": "7b396c11-b99c-4ff8-bb4d-9988c0a509b1",
+				"method": "PUT"
+			},
+			{
+				"id": "6ea24a5c-9401-4393-bcf3-7f30475e333d",
+				"method": "PUT"
+			},
+			{
+				"id": "582fe634-6a52-4dc5-b6ff-dcca3c3a9d24",
+				"method": "PUT"
+			},
+			{
+				"id": "0ea9ff74-7654-4066-9e43-63808f84c144",
+				"method": "DELETE"
+			},
+			{
+				"id": "0f90f134-283c-4d25-a511-1ed9fb8d0e66",
+				"method": "PUT"
+			},
+			{
+				"id": "04fa7500-cb61-4cde-a67a-9f73bec10b1d",
+				"method": "POST"
+			},
+			{
+				"id": "0505f8c8-45fd-4a60-86f3-8e78afcc3a65",
+				"method": "POST"
+			}
+		]
+	}
+}
