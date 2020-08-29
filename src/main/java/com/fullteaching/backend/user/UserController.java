@@ -55,9 +55,9 @@ public class UserController {
 	public ResponseEntity<User> newUser(@RequestBody String[] userData) throws Exception {
 		
 		log.info("Signing up a user...");
-		
-		if(this.validateGoogleCaptcha(userData[3])){
-		
+
+		// if(this.validateGoogleCaptcha(userData[3])){
+
 			//If the email is not already in use
 			if(userRepository.findByName(userData[0]) == null) {
 				
@@ -88,11 +88,11 @@ public class UserController {
 				log.error("Email already in use");
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
 			}
-		}
-		else{
-			log.error("Captcha not validated");
-			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-		}
+//		}
+//		else{
+//			log.error("Captcha not validated");
+//			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+//		}
 	}
 	
 	//userData: [oldPassword, newPassword]
@@ -131,54 +131,54 @@ public class UserController {
 		}
 	}
 	
-	private boolean validateGoogleCaptcha(String token) throws Exception{
-		
-		log.info("Validating Google Captcha");
-		
-		String url = "https://www.google.com/recaptcha/api/siteverify";
-		URL obj = new URL(url);
-		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
-
-		//Add request header
-		con.setRequestMethod("POST");
-
-		String urlParameters  = "secret=" + this.recaptchaPrivateKey + "&response=" + token;
-
-		//Send post request
-		con.setDoOutput(true);
-		DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-		wr.writeBytes(urlParameters);
-		wr.flush();
-		wr.close();
-
-		int responseCode = con.getResponseCode();
-
-		BufferedReader in = new BufferedReader(
-		        new InputStreamReader(con.getInputStream()));
-		String inputLine;
-		StringBuffer response = new StringBuffer();
-
-		while ((inputLine = in.readLine()) != null)
-		{
-			response.append(inputLine);
-		}
-		in.close();
-
-		//Print result
-		log.debug("Response: {}", response.toString());
-		
-		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(response.toString());
-		
-		boolean successCaptchaResponse = (boolean) json.get("success");
-		
-		if (successCaptchaResponse) {
-			log.info("Captcha response successful");
-		} else {
-			log.error("Captcha invalid");
-		}
-		
-		return successCaptchaResponse;
-	}
+//	private boolean validateGoogleCaptcha(String token) throws Exception{
+//
+//		log.info("Validating Google Captcha");
+//
+//		String url = "https://www.google.com/recaptcha/api/siteverify";
+//		URL obj = new URL(url);
+//		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+//
+//		//Add request header
+//		con.setRequestMethod("POST");
+//
+//		String urlParameters  = "secret=" + this.recaptchaPrivateKey + "&response=" + token;
+//
+//		//Send post request
+//		con.setDoOutput(true);
+//		DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+//		wr.writeBytes(urlParameters);
+//		wr.flush();
+//		wr.close();
+//
+//		int responseCode = con.getResponseCode();
+//
+//		BufferedReader in = new BufferedReader(
+//		        new InputStreamReader(con.getInputStream()));
+//		String inputLine;
+//		StringBuffer response = new StringBuffer();
+//
+//		while ((inputLine = in.readLine()) != null)
+//		{
+//			response.append(inputLine);
+//		}
+//		in.close();
+//
+//		//Print result
+//		log.debug("Response: {}", response.toString());
+//
+//		JSONParser parser = new JSONParser();
+//		JSONObject json = (JSONObject) parser.parse(response.toString());
+//
+//		boolean successCaptchaResponse = (boolean) json.get("success");
+//
+//		if (successCaptchaResponse) {
+//			log.info("Captcha response successful");
+//		} else {
+//			log.error("Captcha invalid");
+//		}
+//
+//		return successCaptchaResponse;
+//	}
 
 }
