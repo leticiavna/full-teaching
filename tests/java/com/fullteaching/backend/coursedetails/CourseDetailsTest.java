@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,10 +40,19 @@ class CourseDetailsTest {
     }
 
     @Test
-    void getFiles() {
+    void getFiles_shouldReturnEqualsWithAListWithAFile() {
         List<FileGroup> files = new ArrayList<FileGroup>();
+        FileGroup file = Mockito.mock(FileGroup.class);
+        files.add(file);
         details.setFiles(files);
         assertEquals(files, details.getFiles());
+    }
+
+    @Test
+    void getFiles_shouldReturnEqualsWithEmptyListIfCollectionIsEmpty() {
+        List<FileGroup> files = new ArrayList<FileGroup>();
+        details.setFiles(files);
+        assertEquals(Collections.emptyList(), details.getFiles());
     }
 
     @Test
