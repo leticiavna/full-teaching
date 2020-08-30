@@ -5,6 +5,7 @@ import com.fullteaching.backend.filegroup.FileGroup;
 import com.fullteaching.backend.forum.Forum;
 import com.fullteaching.backend.user.User;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +49,14 @@ class CourseDetailsTest {
     void getCourse() {
         details.setCourse(course);
         assertEquals(course, details.getCourse());
+    }
+
+    @Test
+    void testConstructorWithCourse() {
+        Course course = Mockito.mock(Course.class);
+        CourseDetails courseDetails = new CourseDetails(course);
+
+        assertEquals(course, courseDetails.getCourse());
     }
 
 }
