@@ -4,8 +4,12 @@ import com.fullteaching.backend.course.Course;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,6 +67,25 @@ class UserTest {
         assertEquals("ANA", user.toString());
     }
 
+    @Test
+    void testPicture_IfPictureIsNullThenSetDefaultPicture() {
+        User newUser = new User("beyonce@email.com", "pass", "BEYONCE", null, "TEACHER");
+        String picUrl = "/../assets/images/default_session_image.png";
+        assertEquals(picUrl, newUser.getPicture());
+    }
+
+    @Test
+    void testPicture_IfPictureIsEmptyStringThenSetDefaultPicture() {
+        User newUser = new User("lanadelrey@email.com", "pass", "LANA DEL REY", "", "TEACHER");
+        String picUrl = "/../assets/images/default_session_image.png";
+        assertEquals(picUrl, newUser.getPicture());
+    }
+
+    @Test
+    void testPicture_IfPictureIsGivenThenUsePicture() {
+        User newUser = new User("dojacat@email.com", "pass", "DOJA CAT", "PICTUREURL", "TEACHER");
+        assertEquals("PICTUREURL", newUser.getPicture());
+    }
 
     // TESTING GETTERS AND SETTERS TO INCREASE CODE COVERAGE
     @Test
@@ -101,5 +124,21 @@ class UserTest {
         String picture = "PICTUREURL";
         user.setPicture(picture);
         assertEquals(picture, user.getPicture());
+    }
+
+    @Test
+    void testGetSetRegistrationDate() {
+        user.setRegistrationDate(1598820320);
+        assertEquals(1598820320, user.getRegistrationDate());
+    }
+
+    @Test
+    void testGetSetCourses() {
+        Set courses = new HashSet<Course>();
+        Course course = Mockito.mock(Course.class);
+        courses.add(course);
+
+        user.setCourses(courses);
+        assertEquals(courses, user.getCourses());
     }
 }

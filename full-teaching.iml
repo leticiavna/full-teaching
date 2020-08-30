@@ -424,5 +424,6 @@
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.16" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.9.16" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.pitest:pitest-junit5-plugin:0.12" level="project" />
   </component>
 </module>
